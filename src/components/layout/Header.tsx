@@ -1,9 +1,10 @@
+
 "use client";
 
 import Link from 'next/link';
 import { LogoIcon } from '@/components/icons/LogoIcon';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'; // Added SheetHeader and SheetTitle
 import { Menu, Search, PackagePlus, LocateFixed, ShoppingBag } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -61,11 +62,15 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <div className="flex flex-col gap-4 p-4">
-                <Link href="/" className="mb-4 flex items-center gap-2">
-                  <LogoIcon className="h-8 w-8 text-primary" />
-                  <span className="text-2xl font-bold text-primary">ReTrace</span>
-                </Link>
+              <SheetHeader className="mb-4 border-b pb-4">
+                <SheetTitle className="text-left">
+                  <Link href="/" className="flex items-center gap-2">
+                    <LogoIcon className="h-8 w-8 text-primary" />
+                    <span className="text-2xl font-bold text-primary">ReTrace Menu</span>
+                  </Link>
+                </SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <Button
                     key={link.href}
