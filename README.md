@@ -1,5 +1,3 @@
-# Firebase Studio
+# ReTrace
 
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+Your trusted platform for reuniting lost items with their owners and discovering second-hand treasures.
