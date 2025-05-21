@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import type { Item } from '@/lib/types';
+import { type Item, ItemType } from '@/lib/types'; // Import ItemType here
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -27,7 +27,7 @@ export function ItemCard({ item }: ItemCardProps) {
         </div>
         <CardTitle className="text-xl font-semibold">{name}</CardTitle>
         <div className="flex flex-wrap gap-2 mt-1">
-          <Badge variant={itemType === 'Lost' ? 'destructive' : itemType === 'Found' ? 'secondary' : 'default'}>
+          <Badge variant={itemType === ItemType.LOST ? 'destructive' : itemType === ItemType.FOUND ? 'secondary' : 'default'}>
             {itemType}
           </Badge>
           <Badge variant="outline">
